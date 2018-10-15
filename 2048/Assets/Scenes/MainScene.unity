@@ -2024,10 +2024,10 @@ MonoBehaviour:
   - Number: 0
     TileColor:
       serializedVersion: 2
-      rgba: 0
+      rgba: 4278252287
     NumberColor:
       serializedVersion: 2
-      rgba: 0
+      rgba: 4294901503
 --- !u!1 &698936381
 GameObject:
   m_ObjectHideFlags: 0
