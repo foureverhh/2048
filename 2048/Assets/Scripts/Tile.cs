@@ -5,14 +5,38 @@ using UnityEngine.UI;
 
 public class Tile : MonoBehaviour {
 
+
+    public int Number
+    {
+        get
+        {
+            return number;
+        }
+        set
+        {
+            number = value;
+            if(number == 0)
+                SetEmpty();
+            else
+            {
+                ApplyStyle(number);
+                SetVisible();
+            }
+        }
+    }
+
+    private int number;
+
     private Text tileText;
     private Image tileImage;
 
     private void Awake()
     {
         tileText = GetComponentInChildren<Text>();
-        tileImage = transform.GetChild(0).GetComponent<Image>();
-        //tileImage = transform.Find("NumberedCell").GetComponent<Image>();
+        //tileImage = transform.GetChild(0).GetComponent<Image>();
+
+        tileImage = transform.Find("NumberedCell").GetComponent<Image>();
+        Debug.Log("Image is: " + tileImage.gameObject.name);
     }
 
     void ApplyStyleFromHolder(int index)
@@ -68,10 +92,19 @@ public class Tile : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
+    private void SetVisible()
+    {
+        tileImage.enabled = true;
+        tileText.enabled = true;
+    }
+
+    private void SetEmpty()
+    {
+        tileImage.enabled = false;
+        tileText.enabled = false;
+    }
+
+ 
 	
 	// Update is called once per frame
 	void Update () {
