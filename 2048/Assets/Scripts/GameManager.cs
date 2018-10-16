@@ -6,9 +6,9 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //Tile[] allTilesOneDim = transform.GetComponentsInChildren<Tile>();
+        Tile[] allTilesOneDim = transform.GetComponentsInChildren<Tile>();
        
-        Tile[] allTilesOneDim = GameObject.FindObjectsOfType<Tile>();
+        //Tile[] allTilesOneDim = GameObject.FindObjectsOfType<Tile>();
         Debug.Log(allTilesOneDim.Length);
         foreach (Tile t in allTilesOneDim)
         {

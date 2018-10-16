@@ -33,9 +33,9 @@ public class Tile : MonoBehaviour {
     private void Awake()
     {
         tileText = GetComponentInChildren<Text>();
-        //tileImage = transform.GetChild(0).GetComponent<Image>();
+        tileImage = transform.GetChild(0).GetComponent<Image>();
 
-        tileImage = transform.Find("NumberedCell").GetComponent<Image>();
+        //tileImage = transform.Find("NumberedCell").GetComponent<Image>();
         Debug.Log("Image is: " + tileImage.gameObject.name);
     }
 
