@@ -38,7 +38,7 @@ public class Tile : MonoBehaviour {
         tileImage = transform.GetChild(0).GetComponent<Image>();
 
         //tileImage = transform.Find("NumberedCell").GetComponent<Image>();
-        Debug.Log("Image is: " + tileImage.gameObject.name);
+        //Debug.Log("Image is: " + tileImage.gameObject.name);
     }
 
     void ApplyStyleFromHolder(int index)
