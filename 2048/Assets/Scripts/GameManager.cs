@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    private Tile[,] alltiles = new Tile[4, 4];
+
 	// Use this for initialization
 	void Start () {
         Tile[] allTilesOneDim = transform.GetComponentsInChildren<Tile>();
@@ -13,7 +15,7 @@ public class GameManager : MonoBehaviour {
         foreach (Tile t in allTilesOneDim)
         {
             t.Number = 0;
-            Debug.Log("Tile is: " + t.gameObject.name);
+            alltiles[t.indexRow,t.indexCol] = t;
         }
     }
 
