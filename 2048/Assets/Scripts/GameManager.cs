@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 
     private Tile[,] alltiles = new Tile[4, 4];
     private List<Tile> emptyTiles = new List<Tile>();
+    private List<Tile[]> columns = new List<Tile[]>();
+    private List<Tile[]> rows = new List<Tile[]>();
 
 
 	// Use this for initialization
@@ -21,6 +23,16 @@ public class GameManager : MonoBehaviour {
             alltiles[t.indexRow,t.indexCol] = t;
             emptyTiles.Add(t);
         }
+
+        columns.Add(new Tile[] { alltiles[0, 0], alltiles[1, 0], alltiles[2, 0], alltiles[3, 0] });
+        columns.Add(new Tile[] { alltiles[0, 1], alltiles[1, 1], alltiles[2, 1], alltiles[3, 1] });
+        columns.Add(new Tile[] { alltiles[0, 2], alltiles[1, 2], alltiles[2, 2], alltiles[3, 2] });
+        columns.Add(new Tile[] { alltiles[0, 3], alltiles[1, 3], alltiles[2, 3], alltiles[3, 3] });
+
+        rows.Add(new Tile[] { alltiles[0, 0], alltiles[0, 1], alltiles[0, 2], alltiles[0, 3] });
+        rows.Add(new Tile[] { alltiles[1, 0], alltiles[1, 1], alltiles[1, 2], alltiles[1, 3] });
+        rows.Add(new Tile[] { alltiles[2, 0], alltiles[2, 1], alltiles[2, 2], alltiles[2, 3] });
+        rows.Add(new Tile[] { alltiles[3, 0], alltiles[3, 1], alltiles[3, 2], alltiles[3, 3] });
     }
 
     //Random generate new tiles
