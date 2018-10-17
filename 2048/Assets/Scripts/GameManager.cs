@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour {
         rows.Add(new Tile[] { alltiles[1, 0], alltiles[1, 1], alltiles[1, 2], alltiles[1, 3] });
         rows.Add(new Tile[] { alltiles[2, 0], alltiles[2, 1], alltiles[2, 2], alltiles[2, 3] });
         rows.Add(new Tile[] { alltiles[3, 0], alltiles[3, 1], alltiles[3, 2], alltiles[3, 3] });
+
+        //Creat two tiles
+        Generate();
+        Generate();
     }
 
     bool MakeOneMoveDownIndex(Tile[] LineOfTiles)
@@ -108,12 +112,13 @@ public class GameManager : MonoBehaviour {
         }
     }
     // Update is called once per frame
-    void Update () {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            Generate();
-        }
-	}
+    //void Update () {
+    //    if (Input.GetKeyDown(KeyCode.G))
+    //    {
+    //        Generate();
+    //    }
+
+    //}
 
     void ResetMergedFlags()
     {
@@ -123,9 +128,19 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private void UpdateEmptyTiles()
+    {
+        emptyTiles.Clear();
+        foreach(Tile t in alltiles)
+        {
+            if (t.Number == 0)
+                emptyTiles.Add(t);
+        }
+    }
     public void Move(MoveDirection md)
     {
         Debug.Log(md.ToString() + " move.");
+        bool moveMade = false;
         ResetMergedFlags();
         for (int i=0; i < rows.Count; i++)
         {
@@ -134,29 +149,35 @@ public class GameManager : MonoBehaviour {
                 case MoveDirection.Down:
                     while (MakeOneMoveUpIndex(columns[i]))
                     {
-                       
-                    };
+                        moveMade = true;
+                    }
                     break;
                 case MoveDirection.Up:
                     while (MakeOneMoveDownIndex(columns[i]))
                     {
-
-                    };
+                        moveMade = true;
+                    }
                     break;
                 case MoveDirection.Left:
                     while (MakeOneMoveDownIndex(rows[i]))
                     {
-
-                    };
+                        moveMade = true;
+                    }
                     break;
                 case MoveDirection.Right:
                     while (MakeOneMoveUpIndex(rows[i]))
                     {
-
-                    };
+                        moveMade = true;
+                    }
                     break;
             }
         }
-      
+        if (moveMade)
+        {
+            //To check whether there is en empty blcok
+            UpdateEmptyTiles();
+            //Create one tile after each move
+            Generate();
+        }
     }
 }
