@@ -29,7 +29,6 @@ public class Tile : MonoBehaviour {
     }
 
     private int number;
-
     private Text tileText;
     private Image tileImage;
 

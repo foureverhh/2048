@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour {
                 LineOfTiles[i + 1].Number = 0;
                 LineOfTiles[i].mergedThisTurn = true;
                 //LineOfTiles[i + 1].mergedThisTurn = true;
+                ScoreTracker.Instance.Score += LineOfTiles[i].Number;
                 return true;
             }
         }
@@ -90,6 +91,7 @@ public class GameManager : MonoBehaviour {
                 LineOfTiles[i -1].Number = 0;
                 LineOfTiles[i].mergedThisTurn = true;
                 //LineOfTiles[i-1].mergedThisTurn = true;
+                ScoreTracker.Instance.Score += LineOfTiles[i].Number;
                 return true;
             }
         }
@@ -102,11 +104,12 @@ public class GameManager : MonoBehaviour {
         if(emptyTiles.Count > 0)
         {
             int indexForNewNunmber = Random.Range(0,emptyTiles.Count);
-            int randomNum = Random.Range(0,10);
-            if (randomNum == 0)
-                emptyTiles[indexForNewNunmber].Number = 4;
-            else
-                emptyTiles[indexForNewNunmber].Number = 2;
+            //int randomNum = Random.Range(0,10);
+            //if (randomNum == 0)
+            //    emptyTiles[indexForNewNunmber].Number = 4;
+            //else
+            //emptyTiles[indexForNewNunmber].Number = 2;
+            emptyTiles[indexForNewNunmber].Number = 2;
             emptyTiles.RemoveAt(indexForNewNunmber);
             //Debug.Log("It runs here in Generate");
         }
@@ -179,5 +182,11 @@ public class GameManager : MonoBehaviour {
             //Create one tile after each move
             Generate();
         }
+    }
+
+    public void NewGameButtonHandler()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+           
     }
 }
