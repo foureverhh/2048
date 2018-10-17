@@ -93,5 +93,36 @@ public class GameManager : MonoBehaviour {
     public void Move(MoveDirection md)
     {
         Debug.Log(md.ToString() + " move.");
+        for (int i=0; i < rows.Count; i++)
+        {
+            switch(md)
+            {
+                case MoveDirection.Down:
+                    while (MakeOneMoveUpIndex(columns[i]))
+                    {
+                       
+                    };
+                    break;
+                case MoveDirection.Up:
+                    while (MakeOneMoveDownIndex(columns[i]))
+                    {
+
+                    };
+                    break;
+                case MoveDirection.Left:
+                    while (MakeOneMoveDownIndex(rows[i]))
+                    {
+
+                    };
+                    break;
+                case MoveDirection.Right:
+                    while (MakeOneMoveUpIndex(rows[i]))
+                    {
+
+                    };
+                    break;
+            }
+        }
+      
     }
 }
