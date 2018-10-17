@@ -35,6 +35,38 @@ public class GameManager : MonoBehaviour {
         rows.Add(new Tile[] { alltiles[3, 0], alltiles[3, 1], alltiles[3, 2], alltiles[3, 3] });
     }
 
+    bool MakeOneMoveDownIndex(Tile[] LineOfTiles)
+    {
+        for(int i = 0; i < LineOfTiles.Length -1; i++)
+        {
+            //MOVE BLOCK
+            //En empty tile besides a tile
+            if (LineOfTiles[i].Number == 0 && LineOfTiles[i + 1].Number != 0)
+            {
+                LineOfTiles[i].Number = LineOfTiles[i + 1].Number;
+                LineOfTiles[i + 1].Number = 0;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool MakeOneMoveUpIndex(Tile[] LineOfTiles)
+    {
+        for (int i = LineOfTiles.Length - 1; i > 0 ; i--)
+        {
+            //MOVE BLOCK
+            //En empty tile besides a tile
+            if (LineOfTiles[i].Number == 0 && LineOfTiles[i - 1].Number != 0)
+            {
+                LineOfTiles[i].Number = LineOfTiles[i - 1].Number;
+                LineOfTiles[i - 1].Number = 0;
+                return true;
+            }
+        }
+        return false;
+    }
+
     //Random generate new tiles
     void Generate()
     {
