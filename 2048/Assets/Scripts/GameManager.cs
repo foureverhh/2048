@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 
     bool MakeOneMoveDownIndex(Tile[] LineOfTiles)
     {
-        for(int i = 0; i < LineOfTiles.Length -1; i++)
+        for (int i = 0; i < LineOfTiles.Length - 1; i++)
         {
             //MOVE BLOCK
             //En empty tile besides a tile
@@ -45,6 +45,18 @@ public class GameManager : MonoBehaviour {
             {
                 LineOfTiles[i].Number = LineOfTiles[i + 1].Number;
                 LineOfTiles[i + 1].Number = 0;
+                return true;
+            }
+            //Merge block
+            if (LineOfTiles[i].Number !=0 &&
+                LineOfTiles[i].Number == LineOfTiles[i + 1].Number && 
+                LineOfTiles[i].mergedThisTurn == false && 
+                LineOfTiles[i + 1].mergedThisTurn == false)
+            {
+                LineOfTiles[i].Number = LineOfTiles[i].Number * 2;
+                LineOfTiles[i + 1].Number = 0;
+                LineOfTiles[i].mergedThisTurn = true;
+                //LineOfTiles[i + 1].mergedThisTurn = true;
                 return true;
             }
         }
@@ -61,6 +73,19 @@ public class GameManager : MonoBehaviour {
             {
                 LineOfTiles[i].Number = LineOfTiles[i - 1].Number;
                 LineOfTiles[i - 1].Number = 0;
+                return true;
+            }
+
+            //Merge block
+            if (LineOfTiles[i].Number != 0 &&
+               LineOfTiles[i].Number == LineOfTiles[i - 1].Number &&
+               LineOfTiles[i].mergedThisTurn == false &&
+               LineOfTiles[i - 1].mergedThisTurn == false)
+            {
+                LineOfTiles[i].Number = LineOfTiles[i].Number * 2;
+                LineOfTiles[i -1].Number = 0;
+                LineOfTiles[i].mergedThisTurn = true;
+                //LineOfTiles[i-1].mergedThisTurn = true;
                 return true;
             }
         }
@@ -90,9 +115,18 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
+    void ResetMergedFlags()
+    {
+        foreach(Tile t in alltiles)
+        {
+            t.mergedThisTurn = false;
+        }
+    }
+
     public void Move(MoveDirection md)
     {
         Debug.Log(md.ToString() + " move.");
+        ResetMergedFlags();
         for (int i=0; i < rows.Count; i++)
         {
             switch(md)
