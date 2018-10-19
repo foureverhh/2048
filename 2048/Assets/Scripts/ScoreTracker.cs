@@ -32,6 +32,9 @@ public class ScoreTracker : MonoBehaviour {
 
     private void Awake()
     {
+        //Delete Player's preference
+        //PlayerPrefs.DeleteAll();
+
         Instance = this;
         if (!PlayerPrefs.HasKey("HighScore")) //?
             PlayerPrefs.SetInt("HighScore", 0);
