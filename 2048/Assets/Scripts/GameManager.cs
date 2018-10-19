@@ -193,6 +193,16 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public bool YouWin()
+    {
+        foreach(Tile t in alltiles)
+        {
+            if (t.Number == 2048)
+                return true;
+        }
+        return false;
+    }
+
     public bool TileCanMove()
     {
         if(emptyTiles.Count > 0)
@@ -223,9 +233,17 @@ public class GameManager : MonoBehaviour {
 
     void GameOver()
     {
+        if(YouWin())
+        {
+            gameOverChecker.transform.gameObject.SetActive(true);
+            gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
+            gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+        }
+
         if (!TileCanMove())
         {
             gameOverChecker.transform.gameObject.SetActive(true);
+            gameOverChecker.transform.GetChild(1).gameObject.SetActive(false);
             gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
         }
     }
