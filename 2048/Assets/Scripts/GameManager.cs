@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour {
     private List<Tile> emptyTiles = new List<Tile>();
     private List<Tile[]> columns = new List<Tile[]>();
     private List<Tile[]> rows = new List<Tile[]>();
-
+    [HideInInspector]
+    public GameOverChecker gameOverChecker;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         Tile[] allTilesOneDim = transform.GetComponentsInChildren<Tile>();
        
         //Tile[] allTilesOneDim = GameObject.FindObjectsOfType<Tile>();
@@ -37,6 +39,11 @@ public class GameManager : MonoBehaviour {
         //Creat two tiles
         Generate();
         Generate();
+
+        //Make connection to GameOverChecker
+        gameOverChecker = transform.GetChild(1).GetComponent<GameOverChecker>();
+        gameOverChecker.transform.gameObject.SetActive(false);
+        //gameOverChecker.gameManager = this;
     }
 
     bool MakeOneMoveDownIndex(Tile[] LineOfTiles)
@@ -140,6 +147,7 @@ public class GameManager : MonoBehaviour {
                 emptyTiles.Add(t);
         }
     }
+
     public void Move(MoveDirection md)
     {
         Debug.Log(md.ToString() + " move.");
@@ -181,9 +189,46 @@ public class GameManager : MonoBehaviour {
             UpdateEmptyTiles();
             //Create one tile after each move
             Generate();
+            GameOver();
         }
     }
 
+    public bool TileCanMove()
+    {
+        if(emptyTiles.Count > 0)
+        {
+            return true;
+        }
+        else
+        {
+            for (int rowPos = 0; rowPos < rows.Count; rowPos++)
+            {
+                for (int colPos = 0; colPos < columns.Count - 1; colPos++)
+                {
+                    if (alltiles[rowPos, colPos].Number == alltiles[rowPos, colPos + 1].Number)
+                        return true;
+                }
+            }
+
+            for (int colPos = 0; colPos < columns.Count; colPos++){
+                for(int rowPos = 0; rowPos < rows.Count -1; rowPos++)
+                {
+                    if(alltiles[rowPos, colPos].Number == alltiles[rowPos + 1, colPos].Number)
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    void GameOver()
+    {
+        if (!TileCanMove())
+        {
+            gameOverChecker.transform.gameObject.SetActive(true);
+            gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+        }
+    }
     public void NewGameButtonHandler()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
