@@ -8,6 +8,9 @@ public class Tile : MonoBehaviour {
     public bool mergedThisTurn = false;
     public int indexRow;
     public int indexCol;
+    private Animator animator;
+    int mergeHash = Animator.StringToHash("Merge");
+    int appearHash = Animator.StringToHash("Appear");
 
     public int Number
     {
@@ -34,6 +37,7 @@ public class Tile : MonoBehaviour {
 
     private void Awake()
     {
+        animator = transform.GetComponent<Animator>();
         tileText = GetComponentInChildren<Text>();
         tileImage = transform.GetChild(0).GetComponent<Image>();
 
@@ -106,7 +110,15 @@ public class Tile : MonoBehaviour {
         tileText.enabled = false;
     }
 
- 
+ public void PlayerMergedAnimation()
+    {
+        animator.SetTrigger(mergeHash);
+    }
+
+    public void PlayAppearAnimation()
+    {
+        animator.SetTrigger(appearHash);
+    }
 	
 	// Update is called once per frame
 	void Update () {

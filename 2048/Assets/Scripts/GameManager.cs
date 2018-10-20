@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
     private List<Tile[]> rows = new List<Tile[]>();
     private GameOverChecker gameOverChecker;
 
+   
 	// Use this for initialization
 	void Start ()
     {
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour {
             {
                 LineOfTiles[i].Number = LineOfTiles[i].Number * 2;
                 LineOfTiles[i + 1].Number = 0;
+                LineOfTiles[i].PlayerMergedAnimation();
                 LineOfTiles[i].mergedThisTurn = true;
                 //LineOfTiles[i + 1].mergedThisTurn = true;
                 ScoreTracker.Instance.Score += LineOfTiles[i].Number;
@@ -115,9 +117,11 @@ public class GameManager : MonoBehaviour {
             {
                 LineOfTiles[i].Number = LineOfTiles[i].Number * 2;
                 LineOfTiles[i -1].Number = 0;
+                LineOfTiles[i].PlayerMergedAnimation();
                 LineOfTiles[i].mergedThisTurn = true;
                 //LineOfTiles[i-1].mergedThisTurn = true;
                 ScoreTracker.Instance.Score += LineOfTiles[i].Number;
+               
                 if (LineOfTiles[i].Number == 2048)
                 {
                     gameOverChecker.transform.gameObject.SetActive(true);
@@ -142,6 +146,7 @@ public class GameManager : MonoBehaviour {
             //else
             //emptyTiles[indexForNewNunmber].Number = 2;
             emptyTiles[indexForNewNunmber].Number = 2;
+            emptyTiles[indexForNewNunmber].PlayAppearAnimation();
             emptyTiles.RemoveAt(indexForNewNunmber);
             //Debug.Log("It runs here in Generate");
         }
