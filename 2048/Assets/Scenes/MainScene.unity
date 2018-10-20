@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 46773269}
   - component: {fileID: 46773270}
   - component: {fileID: 46773268}
+  - component: {fileID: 46773271}
   m_Layer: 5
   m_Name: Tile (7)
   m_TagString: Untagged
@@ -319,7 +320,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -348,6 +349,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 1
   indexCol: 3
+--- !u!95 &46773271
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 46773266}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &98082566
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +378,7 @@ GameObject:
   - component: {fileID: 98082569}
   - component: {fileID: 98082570}
   - component: {fileID: 98082568}
+  - component: {fileID: 98082571}
   m_Layer: 5
   m_Name: Tile (14)
   m_TagString: Untagged
@@ -404,7 +424,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -433,6 +453,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 3
   indexCol: 2
+--- !u!95 &98082571
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 98082566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &106099488
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +552,7 @@ GameObject:
   - component: {fileID: 111685284}
   - component: {fileID: 111685285}
   - component: {fileID: 111685283}
+  - component: {fileID: 111685286}
   m_Layer: 5
   m_Name: Tile (1)
   m_TagString: Untagged
@@ -559,7 +598,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -588,6 +627,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 0
   indexCol: 1
+--- !u!95 &111685286
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111685281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &123401774
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +731,7 @@ GameObject:
   - component: {fileID: 172398426}
   - component: {fileID: 172398427}
   - component: {fileID: 172398425}
+  - component: {fileID: 172398428}
   m_Layer: 5
   m_Name: Tile (11)
   m_TagString: Untagged
@@ -719,7 +777,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -748,6 +806,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 2
   indexCol: 3
+--- !u!95 &172398428
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 172398423}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &187183252
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +835,7 @@ GameObject:
   - component: {fileID: 187183255}
   - component: {fileID: 187183256}
   - component: {fileID: 187183254}
+  - component: {fileID: 187183257}
   m_Layer: 5
   m_Name: Tile (4)
   m_TagString: Untagged
@@ -804,7 +881,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -833,6 +910,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 1
   indexCol: 0
+--- !u!95 &187183257
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187183252}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &196697305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1644,7 @@ GameObject:
   - component: {fileID: 469013187}
   - component: {fileID: 469013188}
   - component: {fileID: 469013186}
+  - component: {fileID: 469013189}
   m_Layer: 5
   m_Name: Tile (15)
   m_TagString: Untagged
@@ -1594,7 +1690,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1623,6 +1719,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 3
   indexCol: 3
+--- !u!95 &469013189
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 469013184}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &504821107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,6 +1819,7 @@ GameObject:
   - component: {fileID: 511219174}
   - component: {fileID: 511219175}
   - component: {fileID: 511219173}
+  - component: {fileID: 511219176}
   m_Layer: 5
   m_Name: Tile
   m_TagString: Untagged
@@ -1750,7 +1865,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1779,6 +1894,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 0
   indexCol: 0
+--- !u!95 &511219176
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511219171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &512473802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,7 +2295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dc3490efd412a4ba77b507ede8f032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverChecker: {fileID: 0}
+  State: 0
+  delay: 0
 --- !u!114 &652035401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,6 +2702,7 @@ GameObject:
   - component: {fileID: 801867429}
   - component: {fileID: 801867430}
   - component: {fileID: 801867428}
+  - component: {fileID: 801867431}
   m_Layer: 5
   m_Name: Tile (5)
   m_TagString: Untagged
@@ -2613,7 +2748,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2642,6 +2777,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 1
   indexCol: 1
+--- !u!95 &801867431
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801867426}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &803942928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,6 +2951,7 @@ GameObject:
   - component: {fileID: 808710268}
   - component: {fileID: 808710269}
   - component: {fileID: 808710267}
+  - component: {fileID: 808710270}
   m_Layer: 5
   m_Name: Tile (6)
   m_TagString: Untagged
@@ -2843,7 +2997,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2872,6 +3026,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 1
   indexCol: 2
+--- !u!95 &808710270
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 808710265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &877380762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,8 +3481,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3524,6 +3696,7 @@ GameObject:
   - component: {fileID: 1161376785}
   - component: {fileID: 1161376786}
   - component: {fileID: 1161376784}
+  - component: {fileID: 1161376787}
   m_Layer: 5
   m_Name: Tile (10)
   m_TagString: Untagged
@@ -3569,7 +3742,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3598,6 +3771,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 2
   indexCol: 2
+--- !u!95 &1161376787
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1161376782}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1197640156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,6 +3800,7 @@ GameObject:
   - component: {fileID: 1197640159}
   - component: {fileID: 1197640160}
   - component: {fileID: 1197640158}
+  - component: {fileID: 1197640161}
   m_Layer: 5
   m_Name: Tile (3)
   m_TagString: Untagged
@@ -3654,7 +3846,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3683,6 +3875,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 0
   indexCol: 3
+--- !u!95 &1197640161
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197640156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1209152834
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,6 +4049,7 @@ GameObject:
   - component: {fileID: 1260924361}
   - component: {fileID: 1260924362}
   - component: {fileID: 1260924360}
+  - component: {fileID: 1260924363}
   m_Layer: 5
   m_Name: Tile (2)
   m_TagString: Untagged
@@ -3884,7 +4095,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3913,6 +4124,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 0
   indexCol: 2
+--- !u!95 &1260924363
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1260924358}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1299194459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4288,6 +4517,7 @@ GameObject:
   - component: {fileID: 1453027651}
   - component: {fileID: 1453027652}
   - component: {fileID: 1453027650}
+  - component: {fileID: 1453027653}
   m_Layer: 5
   m_Name: Tile (12)
   m_TagString: Untagged
@@ -4333,7 +4563,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4362,6 +4592,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 3
   indexCol: 0
+--- !u!95 &1453027653
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1453027648}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1456998733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4373,6 +4621,7 @@ GameObject:
   - component: {fileID: 1456998736}
   - component: {fileID: 1456998737}
   - component: {fileID: 1456998735}
+  - component: {fileID: 1456998738}
   m_Layer: 5
   m_Name: Tile (13)
   m_TagString: Untagged
@@ -4418,7 +4667,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4447,6 +4696,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 3
   indexCol: 1
+--- !u!95 &1456998738
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1456998733}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1465462201
 GameObject:
   m_ObjectHideFlags: 0
@@ -5011,6 +5278,7 @@ GameObject:
   - component: {fileID: 1925568763}
   - component: {fileID: 1925568764}
   - component: {fileID: 1925568762}
+  - component: {fileID: 1925568765}
   m_Layer: 5
   m_Name: Tile (9)
   m_TagString: Untagged
@@ -5056,7 +5324,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5085,6 +5353,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 2
   indexCol: 1
+--- !u!95 &1925568765
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925568760}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1970700779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5246,6 +5532,7 @@ GameObject:
   - component: {fileID: 1979115622}
   - component: {fileID: 1979115623}
   - component: {fileID: 1979115621}
+  - component: {fileID: 1979115624}
   m_Layer: 5
   m_Name: Tile (8)
   m_TagString: Untagged
@@ -5291,7 +5578,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: dd8df4f808ee7a24490efb766142da59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5320,6 +5607,24 @@ MonoBehaviour:
   mergedThisTurn: 0
   indexRow: 2
   indexCol: 0
+--- !u!95 &1979115624
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1979115619}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7d1f71339a412640b15e1c4c8e7bcff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2016398898
 GameObject:
   m_ObjectHideFlags: 0

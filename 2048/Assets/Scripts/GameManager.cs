@@ -3,14 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum GameState
+{
+    Playing,
+    GameOver,
+    WaitingForMoveToEnd
+}
+
 public class GameManager : MonoBehaviour {
+
+    //New Ater Added Delays
+    public GameState State;
+    [Range(0, 2f)]
+    public float delay;
+    private bool moveMade;
+    private bool[] lineMoveComplete = new bool[4] { true, true, true, true };
 
     private Tile[,] alltiles = new Tile[4, 4];
     private List<Tile> emptyTiles = new List<Tile>();
     private List<Tile[]> columns = new List<Tile[]>();
     private List<Tile[]> rows = new List<Tile[]>();
-    [HideInInspector]
-    public GameOverChecker gameOverChecker;
+    private GameOverChecker gameOverChecker;
 
 	// Use this for initialization
 	void Start ()
@@ -69,6 +82,12 @@ public class GameManager : MonoBehaviour {
                 LineOfTiles[i].mergedThisTurn = true;
                 //LineOfTiles[i + 1].mergedThisTurn = true;
                 ScoreTracker.Instance.Score += LineOfTiles[i].Number;
+                if (LineOfTiles[i].Number == 2048)
+                {
+                    gameOverChecker.transform.gameObject.SetActive(true);
+                    gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
+                    gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+                }
                 return true;
             }
         }
@@ -99,6 +118,12 @@ public class GameManager : MonoBehaviour {
                 LineOfTiles[i].mergedThisTurn = true;
                 //LineOfTiles[i-1].mergedThisTurn = true;
                 ScoreTracker.Instance.Score += LineOfTiles[i].Number;
+                if (LineOfTiles[i].Number == 2048)
+                {
+                    gameOverChecker.transform.gameObject.SetActive(true);
+                    gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
+                    gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+                }
                 return true;
             }
         }
@@ -151,38 +176,44 @@ public class GameManager : MonoBehaviour {
     public void Move(MoveDirection md)
     {
         Debug.Log(md.ToString() + " move.");
-        bool moveMade = false;
+        moveMade = false;
         ResetMergedFlags();
-        for (int i=0; i < rows.Count; i++)
+        if (delay > 0)
+            StartCoroutine(MoveCoroutine(md));
+        else
         {
-            switch(md)
+            for (int i = 0; i < rows.Count; i++)
             {
-                case MoveDirection.Down:
-                    while (MakeOneMoveUpIndex(columns[i]))
-                    {
-                        moveMade = true;
-                    }
-                    break;
-                case MoveDirection.Up:
-                    while (MakeOneMoveDownIndex(columns[i]))
-                    {
-                        moveMade = true;
-                    }
-                    break;
-                case MoveDirection.Left:
-                    while (MakeOneMoveDownIndex(rows[i]))
-                    {
-                        moveMade = true;
-                    }
-                    break;
-                case MoveDirection.Right:
-                    while (MakeOneMoveUpIndex(rows[i]))
-                    {
-                        moveMade = true;
-                    }
-                    break;
+                switch (md)
+                {
+                    case MoveDirection.Down:
+                        while (MakeOneMoveUpIndex(columns[i]))
+                        {
+                            moveMade = true;
+                        }
+                        break;
+                    case MoveDirection.Up:
+                        while (MakeOneMoveDownIndex(columns[i]))
+                        {
+                            moveMade = true;
+                        }
+                        break;
+                    case MoveDirection.Left:
+                        while (MakeOneMoveDownIndex(rows[i]))
+                        {
+                            moveMade = true;
+                        }
+                        break;
+                    case MoveDirection.Right:
+                        while (MakeOneMoveUpIndex(rows[i]))
+                        {
+                            moveMade = true;
+                        }
+                        break;
+                }
             }
         }
+ 
         if (moveMade)
         {
             //To check whether there is en empty blcok
@@ -191,6 +222,69 @@ public class GameManager : MonoBehaviour {
             Generate();
             GameOver();
         }
+    }
+
+    IEnumerator MoveCoroutine(MoveDirection md)
+    {
+        State = GameState.WaitingForMoveToEnd;
+        switch (md)
+        {
+            case MoveDirection.Down:
+                for (int i = 0; i < columns.Count; i++)
+                    StartCoroutine(MakeOneLineUpIndexCoroutine(columns[i], i));
+                break;
+            case MoveDirection.Up:
+                for (int i = 0; i < columns.Count; i++)
+                    StartCoroutine(MakeOneLineDownIndexCoroutine(columns[i], i));
+                break;
+            case MoveDirection.Left:
+                for (int i = 0; i < rows.Count; i++)
+                    StartCoroutine(MakeOneLineDownIndexCoroutine(rows[i], i));
+                break;
+            case MoveDirection.Right:
+                for (int i = 0; i < rows.Count; i++)
+                    StartCoroutine(MakeOneLineUpIndexCoroutine(rows[i], i));
+                break;
+        }
+
+        //Wait until the move is over in all lines
+        while (!(lineMoveComplete[0] && lineMoveComplete[1] &&
+            lineMoveComplete[2] && lineMoveComplete[3]))
+            yield return null;
+
+        if (moveMade)
+        {
+            UpdateEmptyTiles();
+            Generate();
+            if (!TileCanMove())
+                GameOver();
+            else
+                State = GameState.Playing;
+        }
+        else
+            State = GameState.Playing;
+    }
+
+    IEnumerator MakeOneLineUpIndexCoroutine(Tile[] line,int index)
+    {
+        lineMoveComplete[index] = false;
+        while (MakeOneMoveUpIndex(line))
+        {
+            moveMade = true;
+            yield return new WaitForSeconds(delay);
+        }
+        lineMoveComplete[index] = true;
+    }
+
+    IEnumerator MakeOneLineDownIndexCoroutine(Tile[] line, int index)
+    {
+        lineMoveComplete[index] = false;
+        while (MakeOneMoveDownIndex(line))
+        {
+            moveMade = true;
+            yield return new WaitForSeconds(delay);
+        }
+        lineMoveComplete[index] = true;
     }
 
     public bool YouWin()
@@ -233,18 +327,19 @@ public class GameManager : MonoBehaviour {
 
     void GameOver()
     {
-        if(YouWin())
-        {
-            gameOverChecker.transform.gameObject.SetActive(true);
-            gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
-            gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
-        }
+        //if (YouWin())
+        //{
+        //    gameOverChecker.transform.gameObject.SetActive(true);
+        //    gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
+        //    gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+        //}
 
         if (!TileCanMove())
         {
             gameOverChecker.transform.gameObject.SetActive(true);
             gameOverChecker.transform.GetChild(1).gameObject.SetActive(false);
             gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+            State = GameState.GameOver;
         }
     }
     public void NewGameButtonHandler()
