@@ -263,11 +263,9 @@ public class GameManager : MonoBehaviour {
             Generate();
             if (!TileCanMove())
                 GameOver();
-            else
-                State = GameState.Playing;
         }
-        else
-            State = GameState.Playing;
+        State = GameState.Playing;
+        StopAllCoroutines();
     }
 
     IEnumerator MakeOneLineUpIndexCoroutine(Tile[] line,int index)

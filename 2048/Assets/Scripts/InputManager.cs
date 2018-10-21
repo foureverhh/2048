@@ -15,11 +15,7 @@ public class InputManager : MonoBehaviour {
     {
         gameManager = transform.GetComponent<GameManager>();
     }
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if(gameManager.State == GameState.Playing)
@@ -45,5 +41,6 @@ public class InputManager : MonoBehaviour {
                 gameManager.Move(MoveDirection.Down);
             }
         }
+
     }
 }
