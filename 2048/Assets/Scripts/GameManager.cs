@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour {
     private List<Tile[]> rows = new List<Tile[]>();
     private GameOverChecker gameOverChecker;
 
+    public AudioClip moveSound;
+    public AudioSource backgroundMusic;
    
 	// Use this for initialization
 	void Start ()
@@ -347,6 +349,18 @@ public class GameManager : MonoBehaviour {
     }
     public void NewGameButtonHandler()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
+       
+        foreach (Tile t in alltiles)
+            t.Number = 0;
+        //Creat two tiles
+        Generate();
+        Generate();
+        ScoreTracker.Instance.Score = 0;
+        SoundManager.instance.PlayMusic(moveSound);
+    }
+
+    public void RestartANewGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

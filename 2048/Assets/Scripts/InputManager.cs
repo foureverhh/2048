@@ -10,6 +10,7 @@ public enum MoveDirection
 public class InputManager : MonoBehaviour {
 
     private GameManager gameManager;
+    public AudioClip moveSound;
 
     private void Awake()
     {
@@ -24,23 +25,26 @@ public class InputManager : MonoBehaviour {
             {
                 //Right Move
                 gameManager.Move(MoveDirection.Right);
+                SoundManager.instance.PlayMusic(moveSound);
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 //Left Move
                 gameManager.Move(MoveDirection.Left);
+                SoundManager.instance.PlayMusic(moveSound);
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 //Up Move
                 gameManager.Move(MoveDirection.Up);
+                SoundManager.instance.PlayMusic(moveSound);
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 //Right Move
                 gameManager.Move(MoveDirection.Down);
+                SoundManager.instance.PlayMusic(moveSound);
             }
         }
-
     }
 }

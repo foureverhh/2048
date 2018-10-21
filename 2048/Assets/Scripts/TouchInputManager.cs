@@ -14,6 +14,8 @@ public class TouchInputManager : MonoBehaviour {
     private Vector2 touchStartPos;
     private Vector2 touchEndPos;
 
+    public AudioClip moveSound;
+
     // Use this for initialization
     void Awake () {
         gameManager = GetComponent<GameManager>();
@@ -42,22 +44,29 @@ public class TouchInputManager : MonoBehaviour {
                                 if (Mathf.Abs(distance.x) > Mathf.Abs(distance.y) && distance.x > 0)
                                 {
                                     gameManager.Move(MoveDirection.Right);
+                                    SoundManager.instance.PlayMusic(moveSound);
                                     Debug.Log("Right");
                                 }
                
                                 if (Mathf.Abs(distance.x) > Mathf.Abs(distance.y) && distance.x < 0)
                                 {
-                                    gameManager.Move(MoveDirection.Left); Debug.Log("Left");
+                                    gameManager.Move(MoveDirection.Left);
+                                    Debug.Log("Left");
+                                    SoundManager.instance.PlayMusic(moveSound);
                                 }
 
                                 if (Mathf.Abs(distance.x) < Mathf.Abs(distance.y) && distance.y > 0)
                                 {
-                                    gameManager.Move(MoveDirection.Up); Debug.Log("up");
+                                    gameManager.Move(MoveDirection.Up);
+                                    Debug.Log("up");
+                                    SoundManager.instance.PlayMusic(moveSound);
                                 }
 
                                 if (Mathf.Abs(distance.x) < Mathf.Abs(distance.y) && distance.y < 0)
                                 {
-                                    gameManager.Move(MoveDirection.Down); Debug.Log("down");
+                                    gameManager.Move(MoveDirection.Down);
+                                    Debug.Log("down");
+                                    SoundManager.instance.PlayMusic(moveSound);
                                 }
                             }
                             break;

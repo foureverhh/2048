@@ -5,7 +5,6 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour {
 
     public AudioSource effectMusic;
-    public AudioSource backgrumdMusic;
     public static SoundManager instance;
 
     private void Awake()
@@ -16,7 +15,7 @@ public class SoundManager : MonoBehaviour {
             Destroy(gameObject);
     }
 
-    void PlayMusic(AudioClip clip)
+    public void PlayMusic(AudioClip clip)
     {
         effectMusic.clip = clip;
         effectMusic.Play();
