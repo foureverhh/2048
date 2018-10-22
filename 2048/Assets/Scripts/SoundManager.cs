@@ -5,7 +5,8 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour {
 
     public AudioSource effectMusic;
-    public static SoundManager instance;
+    public AudioSource backgroundMusic;
+    public static SoundManager instance = null;
 
     private void Awake()
     {
@@ -19,5 +20,11 @@ public class SoundManager : MonoBehaviour {
     {
         effectMusic.clip = clip;
         effectMusic.Play();
+        Debug.Log("Clip is: " + clip);
     }
+
+    //public void PlayMusicList(params AudioClip[] audioClips)
+    //{
+        
+    //}
 }

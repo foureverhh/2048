@@ -25,8 +25,11 @@ public class GameManager : MonoBehaviour {
     private List<Tile[]> rows = new List<Tile[]>();
     private GameOverChecker gameOverChecker;
 
+    public AudioSource winSound;
+    public AudioSource lostsound;
     public AudioClip moveSound;
-    public AudioSource backgroundMusic;
+    public AudioClip lostMusic;
+    public AudioClip winMusic;
    
 	// Use this for initialization
 	void Start ()
@@ -88,9 +91,15 @@ public class GameManager : MonoBehaviour {
                 ScoreTracker.Instance.Score += LineOfTiles[i].Number;
                 if (LineOfTiles[i].Number == 2048)
                 {
+                    //Disable input
+                    GetComponent<InputManager>().enabled = false;
+                    GetComponent<TouchInputManager>().enabled = false;
                     gameOverChecker.transform.gameObject.SetActive(true);
                     gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
                     gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+                    SoundManager.instance.PlayMusic(winMusic);
+                    SoundManager.instance.backgroundMusic.Stop();
+                    winSound.Play();
                 }
                 return true;
             }
@@ -125,10 +134,16 @@ public class GameManager : MonoBehaviour {
                 ScoreTracker.Instance.Score += LineOfTiles[i].Number;
                
                 if (LineOfTiles[i].Number == 2048)
-                {
+                { 
+                    //Disable input
+                    GetComponent<InputManager>().enabled = false;
+                    GetComponent<TouchInputManager>().enabled = false;
                     gameOverChecker.transform.gameObject.SetActive(true);
                     gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
                     gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+                    SoundManager.instance.backgroundMusic.Stop();
+                    SoundManager.instance.PlayMusic(winMusic);
+                    winSound.Play();
                 }
                 return true;
             }
@@ -344,6 +359,9 @@ public class GameManager : MonoBehaviour {
             gameOverChecker.transform.gameObject.SetActive(true);
             gameOverChecker.transform.GetChild(1).gameObject.SetActive(false);
             gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+            SoundManager.instance.PlayMusic(lostMusic);
+            lostsound.Play();
+            SoundManager.instance.backgroundMusic.Stop();
             State = GameState.GameOver;
         }
     }
