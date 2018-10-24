@@ -174,14 +174,6 @@ public class GameManager : MonoBehaviour {
             //Debug.Log("It runs here in Generate");
         }
     }
-    // Update is called once per frame
-    //void Update () {
-    //    if (Input.GetKeyDown(KeyCode.G))
-    //    {
-    //        Generate();
-    //    }
-
-    //}
 
     void ResetMergedFlags()
     {
@@ -378,5 +370,10 @@ public class GameManager : MonoBehaviour {
     public void RestartANewGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
