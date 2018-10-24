@@ -89,18 +89,7 @@ public class GameManager : MonoBehaviour {
                 LineOfTiles[i].mergedThisTurn = true;
                 //LineOfTiles[i + 1].mergedThisTurn = true;
                 ScoreTracker.Instance.Score += LineOfTiles[i].Number;
-                if (LineOfTiles[i].Number == 2048)
-                {
-                    //Disable input
-                    GetComponent<InputManager>().enabled = false;
-                    GetComponent<TouchInputManager>().enabled = false;
-                    gameOverChecker.transform.gameObject.SetActive(true);
-                    gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
-                    gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
-                    SoundManager.instance.PlayMusic(winMusic);
-                    SoundManager.instance.backgroundMusic.Stop();
-                    winSound.Play();
-                }
+                CheckWin();
                 return true;
             }
         }
@@ -132,25 +121,42 @@ public class GameManager : MonoBehaviour {
                 LineOfTiles[i].mergedThisTurn = true;
                 //LineOfTiles[i-1].mergedThisTurn = true;
                 ScoreTracker.Instance.Score += LineOfTiles[i].Number;
-               
-                if (LineOfTiles[i].Number == 2048)
-                { 
-                    //Disable input
-                    GetComponent<InputManager>().enabled = false;
-                    GetComponent<TouchInputManager>().enabled = false;
-                    gameOverChecker.transform.gameObject.SetActive(true);
-                    gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
-                    gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
-                    SoundManager.instance.backgroundMusic.Stop();
-                    SoundManager.instance.PlayMusic(winMusic);
-                    winSound.Play();
-                }
-                return true;
+                CheckWin();
             }
         }
         return false;
     }
 
+    void CheckWin()
+    {
+        if (PlayerWin())
+        {
+            ShowWinResult();
+        }
+    }
+
+    bool PlayerWin()
+    {
+        foreach (Tile t in alltiles)
+        {
+            if (t.Number == 2048)
+                return true;
+        }
+        return false;
+    }
+
+    void ShowWinResult()
+    {
+        //Disable input
+        GetComponent<InputManager>().enabled = false;
+        GetComponent<TouchInputManager>().enabled = false;
+        gameOverChecker.transform.gameObject.SetActive(true);
+        gameOverChecker.transform.GetChild(0).gameObject.SetActive(false);
+        gameOverChecker.gameOverScoreText.text = ScoreTracker.Instance.Score.ToString();
+        SoundManager.instance.backgroundMusic.Stop();
+        SoundManager.instance.PlayMusic(winMusic);
+        winSound.Play();
+    }
     //Random generate new tiles
     void Generate()
     {
@@ -307,15 +313,7 @@ public class GameManager : MonoBehaviour {
         lineMoveComplete[index] = true;
     }
 
-    public bool YouWin()
-    {
-        foreach(Tile t in alltiles)
-        {
-            if (t.Number == 2048)
-                return true;
-        }
-        return false;
-    }
+
 
     public bool TileCanMove()
     {
