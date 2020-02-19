@@ -1,2 +1,2 @@
 # 2048
-2018 practice
+2048 practice
